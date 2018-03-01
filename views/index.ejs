@@ -1,0 +1,31 @@
+<% include partials/head %>
+   
+<div class="container">
+	<div class="page-header">
+  		<h1>Noticias SDQ <small>Listado de articulos</small></h1>
+	</div>
+	<div class="row">
+	<% for(let post of posts) {%>
+					
+				
+
+		<div class="col-md-4">
+			<div class="panel panel-default">
+  				<div class="panel-body">
+					<h2><%= post.titulo %>
+					<small><%= post.autor %></small></h2>
+					
+					<img width="100%" src="/img/thumbs/<%= post.imagen%>">
+					<p><%= post.contenido %></p>
+					<a href="/one-posts/<%= post._id %>" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-plus"></i> Leer Más...</a>
+				</div>
+			</div>
+		</div>
+
+
+		<% } %>
+	</div>
+</div>
+
+
+<% include partials/footer %>
